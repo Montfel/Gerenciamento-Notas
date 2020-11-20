@@ -22,3 +22,4 @@ print('O nome das clientes de sexo feminino que fecharam aluguéis acima de 7 di
 for i in range(len(nome_cliente)):
     if sexo[i] == 'f' and qtd_dias[i] > 7:
         print(nome_cliente[i])
+print('Hello')
