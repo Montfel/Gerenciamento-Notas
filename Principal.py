@@ -12,6 +12,7 @@ while True:
     escolha = input('Escolha uma das opções acima: ')
 
     if escolha == '0':
+        print('\nFim do programa.')
         break
     
     elif escolha == '1':
