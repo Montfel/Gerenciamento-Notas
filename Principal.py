@@ -41,12 +41,11 @@ while True:
         listaNota.append(nota)
 
     elif escolha == '5':
-        # Teste
-        buscaProf = input('\nQual matricula do Prof. : ')
+        buscaDisc = input('\nInforme o código da Disciplina: ')
 
-        for i in range(len(listaProf)):
-            if listaProf[i].matricula == buscaProf:
-                Professor.impressao(listaProf[i])
+        for i in range(len(listaDisc)):
+            if listaDisc[i].codigo == buscaDisc:
+                Disciplina.impressao(listaDisc[i])
 
         for i in range(len(listaAluno)):
             print(f'Nome do aluno: {listaAluno[i].nome} - Nota final: ')
