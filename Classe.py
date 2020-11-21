@@ -166,8 +166,8 @@ class Nota:
                     break
 
     def calcularMedia(self):
-        print((self.nota1 * self.nota2) / 2)
-        return (self.nota1 * self.nota2) / 2
+        print((self.nota1 + self.nota2) / 2)
+        return (self.nota1 + self.nota2) / 2
     
     def impressao(self):
         print(f'Codigo da disciplina: {self.codigo_disciplina}'
