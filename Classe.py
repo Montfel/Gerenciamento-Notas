@@ -90,7 +90,7 @@ class Disciplina:
                 if voltar.casefold() == 's':
                     break
 
-    def relatorioNotas(self, professor, notas, alunos):
+    def relatorioNotas(self, professor, notas):
         print(f'\nNome da Disciplina: {self.nome}'
               f'\nMatrícula do professor: {self.matricula_professor}'
               f'\nNome do Professor: {Professor.getNome(professor)}')
