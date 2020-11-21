@@ -1,5 +1,5 @@
 from Classe import Professor, Aluno, Disciplina, Nota
-from Funcao import relacaoAlunos
+# from Funcao import relacaoAlunos
 
 listaProf = []
 listaAluno = []
@@ -47,10 +47,9 @@ while True:
         for i in range(len(listaProf)):
             if listaProf[i].matricula == buscaProf:
                 Professor.impressao(listaProf[i])
-    
-    # Teste Felipe
-    elif escolha == '6':
-        relacaoAlunos()
+
+        for i in range(len(listaAluno)):
+            print(f'Nome do aluno: {listaAluno[i].nome} - Nota final: ')
 
     else:
         print('\nOpção invalida! Digite novamente.')

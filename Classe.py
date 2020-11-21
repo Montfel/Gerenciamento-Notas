@@ -34,15 +34,15 @@ class Professor:
             except (OverflowError, AssertionError, ValueError):
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
-                    return None
+                    break
 
     def impressao(self):
         print(f'Nome: {self.nome}'
               f' - Matricula: {self.matricula}'
               f' - Data de nascimento: {self.data_nascimento}')
 
-    def getNome(self):
-        print(self.nome)
+    # def getNome(self):
+    #     print(self.nome)
 
 
 class Aluno:
@@ -74,10 +74,10 @@ class Aluno:
                 print('\nAluno cadastrado.')
                 break
 
-            except (OverflowError, AssertionError):
+            except (OverflowError, AssertionError, ValueError):
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
-                    return None
+                    break
 
     def impressao(self):
         print(f'Nome: {self.nome}'
@@ -116,7 +116,7 @@ class Disciplina:
             except (OverflowError, AssertionError):
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
-                    return None
+                    break
     
     def impressao(self):
         print(f'\nCodigo: {self.codigo}'
@@ -127,7 +127,6 @@ class Disciplina:
         self.impressao()
         # Professor.getNome(professor)
         
-
 
 class Nota:
     codigo_disciplina = ''
@@ -151,10 +150,10 @@ class Nota:
                 assert self.matricula_aluno.isnumeric()
 
                 self.nota1 = float(input('\nInforme a primeira nota: '))  # .strip().capitalize()
-                assert self.nota1 >= 0 and self.nota1 <= 10
+                assert 0 <= self.nota1 <= 10
 
                 self.nota2 = float(input('\nInforme a segunda nota: '))  # .strip().capitalize()
-                assert self.nota2 >= 0 and self.nota2 <= 10
+                assert 0 <= self.nota2 <= 10
 
                 # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
                 # subirDadosParaArquivo('medicos.txt', medicos)
@@ -164,7 +163,7 @@ class Nota:
             except (OverflowError, AssertionError):
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
-                    return None
+                    break
 
     def calcularMedia(self):
         print((self.nota1 * self.nota2) / 2)
