@@ -30,6 +30,7 @@ while True:
     
     elif escolha == '3':
         disciplina = Disciplina()
+        Disciplina.relatorioNotas(disciplina)
     
     elif escolha == '4':
         nota = Nota()

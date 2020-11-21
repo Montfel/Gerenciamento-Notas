@@ -1,4 +1,4 @@
-def relatorioNotas():
+def relacaoAlunos():
     pass
 
 

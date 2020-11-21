@@ -41,6 +41,9 @@ class Professor:
               f' - Matricula: {self.matricula}'
               f' - Data de nascimento: {self.data_nascimento}')
 
+    def getNome(self):
+        print(self.nome)
+
 
 class Aluno:
     nome = ''
@@ -116,9 +119,14 @@ class Disciplina:
                     return None
     
     def impressao(self):
-        print(f'Codigo: {self.codigo}'
+        print(f'\nCodigo: {self.codigo}'
               f' - Nome: {self.nome}'
               f' - Matrícula do professor: {self.matricula_professor}')
+
+    def relatorioNotas(self):
+        self.impressao()
+        # Professor.getNome(professor)
+        
 
 
 class Nota:
@@ -147,7 +155,7 @@ class Nota:
 
                 self.nota2 = float(input('\nInforme a segunda nota: '))  # .strip().capitalize()
                 assert self.nota2 >= 0 and self.nota2 <= 10
-                
+
                 # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
                 # subirDadosParaArquivo('medicos.txt', medicos)
                 print('\nNotas cadastradas.')
@@ -163,3 +171,5 @@ class Nota:
               f' - Matrícula do aluno: {self.matricula_aluno}'
               f' - Nota 1: {self.nota1}'
               f' - Nota 2: {self.nota2}')
+
+
