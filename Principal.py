@@ -32,7 +32,7 @@ while True:
     
     elif escolha == '3':
         disciplina = Disciplina()
-        Disciplina.relatorioNotas(disciplina)
+        Disciplina.relatorioNotas(disciplina, professor)
         listaDisc.append(disciplina)
     
     elif escolha == '4':

@@ -32,8 +32,8 @@ class Professor:
               f' - Matricula: {self.matricula}'
               f' - Data de nascimento: {self.data_nascimento}')
 
-    # def getNome(self):
-    #     print(self.nome)
+    def getNome(self):
+        print(self.nome)
 
 
 class Aluno:
@@ -91,16 +91,12 @@ class Disciplina:
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
                     break
-    
-    def impressao(self):
-        print(f'\nCodigo: {self.codigo}'
-              f' - Nome: {self.nome}'
-              f' - Matrícula do professor: {self.matricula_professor}')
 
-    def relatorioNotas(self):
-        self.impressao()
-        # Professor.getNome(professor)
-        
+    def relatorioNotas(self, professor):
+        print(f'\nNome: {self.nome}'
+              f'\nMatrícula do professor: {self.matricula_professor}'
+              f'\nNome do Professor: {Professor.getNome(professor)}')
+
 
 class Nota:
     codigo_disciplina = ''
