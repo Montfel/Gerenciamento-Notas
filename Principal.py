@@ -22,6 +22,7 @@ while True:
     
     elif escolha == '1':
         professor = Professor()
+        listaProf.append(professor)
 
     elif escolha == '2':
         aluno = Aluno()
@@ -34,6 +35,11 @@ while True:
 
     elif escolha == '5':
         pass
+        buscaProf = input('\nQual matricula do Prof. : ')
+
+        for i in range(len(listaProf)):
+            if listaProf[i].matricula == buscaProf:
+                Professor.impressao(listaProf[i])
 
     else:
         print('\nOpção invalida! Digite novamente.')

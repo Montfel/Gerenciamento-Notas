@@ -39,6 +39,9 @@ class Professor:
                 if voltar.casefold() == 's':
                     return None
 
+    def impressao(self):
+        print(f'Nome: {self.nome} - Matricula: {self.matricula} - Data de nascimento: {self.data_nascimento}')
+
 
 class Aluno:
     nome = ''
