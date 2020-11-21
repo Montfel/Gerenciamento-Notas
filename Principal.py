@@ -16,7 +16,7 @@ while True:
         break
     
     elif escolha == '1':
-        pass
+        professor = Professor()
 
     elif escolha == '2':
         pass

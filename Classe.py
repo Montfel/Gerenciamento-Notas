@@ -8,9 +8,6 @@ class Professor:
     data_nascimento = date
 
     def __init__(self):
-        self.cadastrar()
-    
-    def cadastrar(self):
         while True:
             try:
                 self.matricula = input('\nInforme a matrícula do professor: ')
@@ -26,8 +23,8 @@ class Professor:
                 assert len(self.nome) >= 1
 
                 data = input('\nInforme a data de nascimento do professor (DD/MM/AAAA): ')
+                assert len(data) == 10
                 self.data_nascimento = date(int(data[6:]), int(data[3:5]), int(data[:2]))
-                assert len(self.data_nascimento) == 10
                 print(self.nome)
                 print(self.matricula)
                 print(self.data_nascimento)
