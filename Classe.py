@@ -40,7 +40,9 @@ class Professor:
                     return None
 
     def impressao(self):
-        print(f'Nome: {self.nome} - Matricula: {self.matricula} - Data de nascimento: {self.data_nascimento}')
+        print(f'Nome: {self.nome}'
+              f' - Matricula: {self.matricula}'
+              f' - Data de nascimento: {self.data_nascimento}')
 
 
 class Aluno:
@@ -118,10 +120,6 @@ class Disciplina:
                 if voltar.casefold() == 's':
                     return None
 
-    def impressao(self):
-        print(f'Nome: {self.nome} '
-              f'- Matrícula: {self.matricula_professor} '
-              f'- Data de nascimento: {self.matricula_professor}')
 
 class Nota:
     codigo_disciplina = ''
@@ -144,11 +142,11 @@ class Nota:
                 self.matricula_aluno = input('\nInforme a matrícula do aluno: ')
                 assert self.matricula_aluno.isnumeric()
 
-                self.nota1 = input('\nInforme a primeira nota: ').strip().capitalize()
-                assert len(self.nota1) >= 1
+                self.nota1 = float(input('\nInforme a primeira nota: '))  # .strip().capitalize()
+                # assert len(self.nota1) >= 1
 
-                self.nota2 = input('\nInforme a segunda nota: ').strip().capitalize()
-                assert len(self.nota2) >= 1
+                self.nota2 = float(input('\nInforme a segunda nota: '))  # .strip().capitalize()
+                # assert len(self.nota2) >= 1
 
                 print(self.codigo_disciplina)
                 print(self.matricula_aluno)
@@ -164,3 +162,5 @@ class Nota:
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
                     return None
+
+    
