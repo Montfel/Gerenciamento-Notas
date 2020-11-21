@@ -1,8 +1,25 @@
+def buscarDisciplina(busca, listaDisc):
+    for i in range(len(listaDisc)):
+        if listaDisc[i].codigo == busca:
+            return listaDisc[i]
+
+    return False
 
 
-# def relacaoAlunos():
-#     for i in range(len(listaAluno)):
-#         print(listaAluno[i].nome)
+def buscarProfessor(disciplina, listaProf):
+    for i in range(len(listaProf)):
+        if listaProf[i].matricula == disciplina.matricula_professor:
+            return listaProf[i]
+
+    return False
+
+
+#
+# for i in range(len(listaNota)):
+#     if listaNota[i].codigo_disciplina == disciplina.codigo:
+#         notas.append(listaNota[i])
+#     # if listaAluno[i].matricula == listaNota[i].matricula_aluno:
+#     #     alunos.append(listaAluno[i])
 
 
 def voltarMenu():

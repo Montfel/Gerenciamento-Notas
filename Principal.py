@@ -1,5 +1,5 @@
 from Classe import Professor, Aluno, Disciplina, Nota
-# from Funcao import relacaoAlunos
+from Funcao import buscarDisciplina, buscarProfessor, voltarMenu
 
 listaProf = []
 listaAluno = []
@@ -22,7 +22,7 @@ while True:
     if escolha == '0':
         print('\nFim do programa.')
         break
-    
+
     elif escolha == '1':
         professor = Professor()
         listaProf.append(professor)
@@ -30,35 +30,38 @@ while True:
     elif escolha == '2':
         aluno = Aluno()
         listaAluno.append(aluno)
-    
+
     elif escolha == '3':
         disciplina = Disciplina()
         listaDisc.append(disciplina)
-    
+
     elif escolha == '4':
         nota = Nota()
-        Nota.calcularMedia(nota)
         listaNota.append(nota)
 
     elif escolha == '5':
-        buscaDisc = input('\nInforme o código da Disciplina: ')
+        while True:
+            try:
+                buscaDisc = input('\nInforme o código da Disciplina: ')
 
-        # Melhorar!
-        for i in range(len(listaDisc)):
-            if listaDisc[i].codigo == buscaDisc:
-                disciplina = listaDisc[i]
+                disc = buscarDisciplina(buscaDisc, listaDisc)
+                assert disc is not False
 
-        for i in range(len(listaProf)):
-            if listaProf[i].matricula == disciplina.matricula_professor:
-                professor = listaProf[i]
+                prof = buscarProfessor(disc, listaProf)
 
-        for i in range(len(listaNota)):
-            if listaNota[i].codigo_disciplina == disciplina.codigo:
-                notas.append(listaNota[i])
-            # if listaAluno[i].matricula == listaNota[i].matricula_aluno:
-            #     alunos.append(listaAluno[i])
+                for i in range(len(listaNota)):
+                    if listaNota[i].codigo_disciplina == disc.codigo:
+                        notas.append(listaNota[i])
+                    # if listaAluno[i].matricula == listaNota[i].matricula_aluno:
+                    #     alunos.append(listaAluno[i])
 
-        Disciplina.relatorioNotas(disciplina, professor, notas)
+                Disciplina.relatorioNotas(disc, prof, notas)
+                break
+
+            except AssertionError:
+                voltar = voltarMenu()
+                if voltar.casefold() == 's':
+                    break
 
     else:
         print('\nOpção invalida! Digite novamente.')
