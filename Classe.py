@@ -38,7 +38,6 @@ class Professor:
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
                     return None
-        
 
 
 class Aluno:
@@ -116,6 +115,10 @@ class Disciplina:
                 if voltar.casefold() == 's':
                     return None
 
+    def impressao(self):
+        print(f'Nome: {self.nome} '
+              f'- Matrícula: {self.matricula_professor} '
+              f'- Data de nascimento: {self.matricula_professor}')
 
 class Nota:
     codigo_disciplina = ''

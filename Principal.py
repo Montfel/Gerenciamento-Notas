@@ -1,5 +1,10 @@
 from Classe import Professor, Aluno, Disciplina, Nota
 
+listaProf = []
+listaAluno = []
+listaDisc = []
+listaNota = []
+
 while True:
     print('\nMenu da Escola\n\n'
           '1 - Cadastro de Professores\n'
@@ -19,13 +24,13 @@ while True:
         professor = Professor()
 
     elif escolha == '2':
-        pass
+        aluno = Aluno()
     
     elif escolha == '3':
-        pass
+        displina = Disciplina()
     
     elif escolha == '4':
-        pass
+        nota = Nota()
 
     elif escolha == '5':
         pass
