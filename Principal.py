@@ -34,6 +34,7 @@ while True:
     
     elif escolha == '4':
         nota = Nota()
+        Nota.calcularMedia(nota)
 
     elif escolha == '5':
         # Teste
