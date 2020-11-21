@@ -7,6 +7,9 @@ class Professor:
     data_nascimento = date
 
     def __init__(self):
+        self.cadastrar()
+    
+    def cadastrar(self):
         while True:
             try:
                 self.matricula = input('\nInforme a matrícula do professor: ')
@@ -23,12 +26,10 @@ class Professor:
 
                 data = input('\nInforme a data de nascimento do professor (DD/MM/AAAA): ')
                 self.data_nascimento = date(int(data[6:]), int(data[3:5]), int(data[:2]))
-                assert len(self.data_nascimento) == 10
-                
                 print(self.nome)
                 print(self.matricula)
                 print(self.data_nascimento)
-                
+                # assert self.cpf.isnumeric() and len(self.cpf) == 11
 
                 # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
                 # subirDadosParaArquivo('medicos.txt', medicos)
