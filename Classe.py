@@ -31,7 +31,7 @@ class Professor:
 
                 # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
                 # subirDadosParaArquivo('medicos.txt', medicos)
-                print('\nMédico cadastrado.')
+                print('\nProfessor cadastrado.')
                 break
 
             except (OverflowError, AssertionError):
@@ -46,10 +46,37 @@ class Aluno:
     matricula = ''
     data_nascimento = date
 
-    def __init__(self, nome, matricula, data_nascimento):
-        self.nome = nome
-        self.matricula = matricula
-        self.data_nascimento = data_nascimento
+    def __init__(self):
+        while True:
+            try:
+                self.matricula = input('\nInforme a matrícula do aluno: ')
+                assert self.matricula.isnumeric()
+
+                # medico_existe, none, medicos = verificarDado('medicos.txt', self.crm)
+
+                # if medico_existe:
+                #     print('\nEste médico já existe.')
+                #     raise OverflowError
+
+                self.nome = input('\nInforme o nome do aluno: ').strip().capitalize()
+                assert len(self.nome) >= 1
+
+                data = input('\nInforme a data de nascimento do aluno (DD/MM/AAAA): ')
+                assert len(data) == 10
+                self.data_nascimento = date(int(data[6:]), int(data[3:5]), int(data[:2]))
+                print(self.nome)
+                print(self.matricula)
+                print(self.data_nascimento)
+
+                # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
+                # subirDadosParaArquivo('medicos.txt', medicos)
+                print('\nAluno cadastrado.')
+                break
+
+            except (OverflowError, AssertionError):
+                voltar = voltarMenu()
+                if voltar.casefold() == 's':
+                    return None
 
 
 class Disciplina:
@@ -57,10 +84,37 @@ class Disciplina:
     nome = ''
     matricula_professor = ''
     
-    def __init__(self, codigo, nome, matricula_professor):
-        self.codigo = codigo
-        self.nome = nome
-        self.matricula_professor = matricula_professor
+    def __init__(self):
+        while True:
+            try:
+                self.codigo = input('\nInforme o código da disciplina: ')
+                assert self.codigo.isnumeric()
+
+                # medico_existe, none, medicos = verificarDado('medicos.txt', self.crm)
+
+                # if medico_existe:
+                #     print('\nEste médico já existe.')
+                #     raise OverflowError
+
+                self.nome = input('\nInforme o nome da disciplina: ').strip().capitalize()
+                assert len(self.nome) >= 1
+
+                self.matricula_professor = input('\nInforme a matrícula do professor: ')
+                assert self.matricula_professor.isnumeric()
+
+                print(self.codigo)
+                print(self.nome)
+                print(self.matricula_professor)
+
+                # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
+                # subirDadosParaArquivo('medicos.txt', medicos)
+                print('\nDisciplina cadastrada.')
+                break
+
+            except (OverflowError, AssertionError):
+                voltar = voltarMenu()
+                if voltar.casefold() == 's':
+                    return None
 
 
 class Nota:
@@ -69,8 +123,38 @@ class Nota:
     nota1 = 0.0
     nota2 = 0.0
     
-    def __init__(self, codigo_disciplina, matricula_aluno, nota1, nota2):
-        self.codigo_disciplina = codigo_disciplina
-        self.matricula_aluno = matricula_aluno
-        self.nota1 = nota1
-        self.nota2 = nota2
+    def __init__(self):
+        while True:
+            try:
+                self.codigo_disciplina = input('\nInforme o código da disciplina: ')
+                assert self.codigo_disciplina.isnumeric()
+
+                # medico_existe, none, medicos = verificarDado('medicos.txt', self.crm)
+
+                # if medico_existe:
+                #     print('\nEste médico já existe.')
+                #     raise OverflowError
+                
+                self.matricula_aluno = input('\nInforme a matrícula do aluno: ')
+                assert self.matricula_aluno.isnumeric()
+
+                self.nota1 = input('\nInforme a primeira nota: ').strip().capitalize()
+                assert len(self.nota1) >= 1
+
+                self.nota2 = input('\nInforme a segunda nota: ').strip().capitalize()
+                assert len(self.nota2) >= 1
+
+                print(self.codigo_disciplina)
+                print(self.matricula_aluno)
+                print(self.nota1)
+                print(self.nota2)
+
+                # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
+                # subirDadosParaArquivo('medicos.txt', medicos)
+                print('\nNotas cadastradas.')
+                break
+
+            except (OverflowError, AssertionError):
+                voltar = voltarMenu()
+                if voltar.casefold() == 's':
+                    return None
