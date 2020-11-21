@@ -1,4 +1,6 @@
 from datetime import date
+
+
 class Professor:
     nome = ''
     matricula = ''
@@ -8,6 +10,7 @@ class Professor:
         self.nome = nome
         self.matricula = matricula
         self.data_nascimento = data_nascimento
+
 
 class Aluno:
     nome = ''
@@ -19,6 +22,7 @@ class Aluno:
         self.matricula = matricula
         self.data_nascimento = data_nascimento
 
+
 class Disciplina:
     codigo = ''
     nome = ''
@@ -28,6 +32,7 @@ class Disciplina:
         self.codigo = codigo
         self.nome = nome
         self.matricula_professor = matricula_professor
+
 
 class Nota:
     codigo_disciplina = ''
