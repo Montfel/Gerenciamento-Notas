@@ -34,7 +34,7 @@ while True:
         nota = Nota()
 
     elif escolha == '5':
-        pass
+        # Teste
         buscaProf = input('\nQual matricula do Prof. : ')
 
         for i in range(len(listaProf)):

@@ -34,7 +34,7 @@ class Professor:
                 print('\nProfessor cadastrado.')
                 break
 
-            except (OverflowError, AssertionError):
+            except (OverflowError, AssertionError, ValueError):
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
                     return None
@@ -163,4 +163,3 @@ class Nota:
                 if voltar.casefold() == 's':
                     return None
 
-    
