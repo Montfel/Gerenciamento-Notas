@@ -1,5 +1,7 @@
+from Principal import listaAluno, listaDisc, listaNota, listaProf
 def relacaoAlunos():
-    pass
+    for i in range(len(listaAluno)):
+        print(listaAluno[i].nome)
 
 
 def voltarMenu():
