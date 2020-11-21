@@ -15,15 +15,6 @@ while True:
         break
     
     elif escolha == '1':
-        
-
-    elif escolha == '2':
-        pass
-
-    elif escolha == '3':
-        pass
-
-    elif escolha == '4':
         pass
 
     elif escolha == '5':
