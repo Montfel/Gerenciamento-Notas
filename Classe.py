@@ -1,5 +1,6 @@
 from datetime import date
-from Funcao import voltarMenu
+
+
 class Professor:
     nome = ''
     matricula = ''
@@ -39,6 +40,7 @@ class Professor:
                 if voltar.casefold() == 's':
                     return None
         
+
 
 class Aluno:
     nome = ''
