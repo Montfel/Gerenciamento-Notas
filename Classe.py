@@ -90,11 +90,14 @@ class Disciplina:
                 if voltar.casefold() == 's':
                     break
 
-    def relatorioNotas(self, professor, nota, aluno):
-        print(f'\nNome: {self.nome}'
+    def relatorioNotas(self, professor, notas, alunos):
+        print(f'\nNome da Disciplina: {self.nome}'
               f'\nMatrícula do professor: {self.matricula_professor}'
-              f'\nNome do Professor: {Professor.getNome(professor)}'
-              f'\nMatrícula do aluno: {Nota.getMatriculaAluno(nota)} - Nome do aluno: {Aluno.getNome(aluno)}')
+              f'\nNome do Professor: {Professor.getNome(professor)}')
+        for i in range(len(notas)):
+            print(f'\nMatrícula do aluno: {Nota.getMatriculaAluno(notas[i])} '
+                  # f'- Nome do aluno: {Aluno.getNome(alunos[i])} '
+                  f'- Nota final: {Nota.calcularMedia(notas[i])}')
 
 
 class Nota:

@@ -5,6 +5,8 @@ listaProf = []
 listaAluno = []
 listaDisc = []
 listaNota = []
+notas = []
+alunos = []
 
 while True:
     print('\nMenu da Escola\n\n'
@@ -44,13 +46,19 @@ while True:
         # Melhorar!
         for i in range(len(listaDisc)):
             if listaDisc[i].codigo == buscaDisc:
-                for j in range(len(listaProf)):
-                    if listaProf[j].matricula == listaDisc[i].matricula_professor:
-                        for h in range(len(listaNota)):
-                            if listaNota[h].codigo_disciplina == listaDisc[i].codigo:
-                                for x in range(len(listaAluno)):
-                                    if listaNota[h].matricula_aluno == listaAluno[x].matricula:
-                                        Disciplina.relatorioNotas(listaDisc[i], listaProf[j], listaNota[h], listaAluno[x])
+                disciplina = listaDisc[i]
+
+        for i in range(len(listaProf)):
+            if listaProf[i].matricula == disciplina.matricula_professor:
+                professor = listaProf[i]
+
+        for i in range(len(listaNota)):
+            if listaNota[i].codigo_disciplina == disciplina.codigo:
+                notas.append(listaNota[i])
+            # if listaAluno[i].matricula == listaNota[i].matricula_aluno:
+            #     alunos.append(listaAluno[i])
+
+        Disciplina.relatorioNotas(disciplina, professor, notas)
 
     else:
         print('\nOpção invalida! Digite novamente.')
