@@ -163,3 +163,6 @@ class Nota:
                 if voltar.casefold() == 's':
                     return None
 
+    def calcularMedia(self):
+        print((self.nota1 * self.nota2) / 2)
+        return (self.nota1 * self.nota2) / 2
