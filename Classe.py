@@ -33,7 +33,7 @@ class Professor:
               f' - Data de nascimento: {self.data_nascimento}')
 
     def getNome(self):
-        print(self.nome)
+        return self.nome
 
 
 class Aluno:
@@ -61,10 +61,8 @@ class Aluno:
                 if voltar.casefold() == 's':
                     break
 
-    def impressao(self):
-        print(f'Nome: {self.nome}'
-              f' - Matricula: {self.matricula}'
-              f' - Data de nascimento: {self.data_nascimento}')
+    def getNome(self):
+        return self.nome
 
 
 class Disciplina:
@@ -92,10 +90,11 @@ class Disciplina:
                 if voltar.casefold() == 's':
                     break
 
-    def relatorioNotas(self, professor):
+    def relatorioNotas(self, professor, nota, aluno):
         print(f'\nNome: {self.nome}'
               f'\nMatrícula do professor: {self.matricula_professor}'
-              f'\nNome do Professor: {Professor.getNome(professor)}')
+              f'\nNome do Professor: {Professor.getNome(professor)}'
+              f'\nMatrícula do aluno: {Nota.getMatriculaAluno(nota)} - Nome do aluno: {Aluno.getNome(aluno)}')
 
 
 class Nota:
@@ -128,13 +127,7 @@ class Nota:
                     break
 
     def calcularMedia(self):
-        print((self.nota1 + self.nota2) / 2)
         return (self.nota1 + self.nota2) / 2
     
-    def impressao(self):
-        print(f'Codigo da disciplina: {self.codigo_disciplina}'
-              f' - Matrícula do aluno: {self.matricula_aluno}'
-              f' - Nota 1: {self.nota1}'
-              f' - Nota 2: {self.nota2}')
-
-
+    def getMatriculaAluno(self):
+        return self.matricula_aluno

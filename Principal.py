@@ -23,7 +23,6 @@ while True:
     
     elif escolha == '1':
         professor = Professor()
-        Professor.impressao(professor)
         listaProf.append(professor)
 
     elif escolha == '2':
@@ -32,7 +31,6 @@ while True:
     
     elif escolha == '3':
         disciplina = Disciplina()
-        Disciplina.relatorioNotas(disciplina, professor)
         listaDisc.append(disciplina)
     
     elif escolha == '4':
@@ -43,12 +41,16 @@ while True:
     elif escolha == '5':
         buscaDisc = input('\nInforme o código da Disciplina: ')
 
+        # Melhorar!
         for i in range(len(listaDisc)):
             if listaDisc[i].codigo == buscaDisc:
-                Disciplina.impressao(listaDisc[i])
-
-        for i in range(len(listaAluno)):
-            print(f'Nome do aluno: {listaAluno[i].nome} - Nota final: ')
+                for j in range(len(listaProf)):
+                    if listaProf[j].matricula == listaDisc[i].matricula_professor:
+                        for h in range(len(listaNota)):
+                            if listaNota[h].codigo_disciplina == listaDisc[i].codigo:
+                                for x in range(len(listaAluno)):
+                                    if listaNota[h].matricula_aluno == listaAluno[x].matricula:
+                                        Disciplina.relatorioNotas(listaDisc[i], listaProf[j], listaNota[h], listaAluno[x])
 
     else:
         print('\nOpção invalida! Digite novamente.')
