@@ -12,9 +12,19 @@ while True:
     escolha = input('Escolha uma das opções acima: ')
 
     if escolha == '0':
+        print('\nFim do programa.')
         break
     
     elif escolha == '1':
+        pass
+
+    elif escolha == '2':
+        pass
+    
+    elif escolha == '3':
+        pass
+    
+    elif escolha == '4':
         pass
 
     elif escolha == '5':

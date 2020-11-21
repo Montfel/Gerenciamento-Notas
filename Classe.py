@@ -1,4 +1,5 @@
 from datetime import date
+from Funcao import voltarMenu
 
 
 class Professor:
@@ -26,10 +27,10 @@ class Professor:
 
                 data = input('\nInforme a data de nascimento do professor (DD/MM/AAAA): ')
                 self.data_nascimento = date(int(data[6:]), int(data[3:5]), int(data[:2]))
+                assert len(self.data_nascimento) == 10
                 print(self.nome)
                 print(self.matricula)
                 print(self.data_nascimento)
-                # assert self.cpf.isnumeric() and len(self.cpf) == 11
 
                 # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
                 # subirDadosParaArquivo('medicos.txt', medicos)
@@ -71,7 +72,8 @@ class Nota:
     nota1 = 0.0
     nota2 = 0.0
     
-    def __init__(self, codigo, nome, matricula_professor):
-        self.codigo = codigo
-        self.nome = nome
-        self.matricula_professor = matricula_professor
+    def __init__(self, codigo_disciplina, matricula_aluno, nota1, nota2):
+        self.codigo_disciplina = codigo_disciplina
+        self.matricula_aluno = matricula_aluno
+        self.nota1 = nota1
+        self.nota2 = nota2
