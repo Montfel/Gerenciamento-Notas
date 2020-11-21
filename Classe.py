@@ -1,11 +1,41 @@
+from datetime import date
 class Professor:
-    pass
+    nome = ''
+    matricula = ''
+    data_nascimento = date
+
+    def __init__(self, nome, matricula, data_nascimento):
+        self.nome = nome
+        self.matricula = matricula
+        self.data_nascimento = data_nascimento
 
 class Aluno:
-    pass
+    nome = ''
+    matricula = ''
+    data_nascimento = date
+
+    def __init__(self, nome, matricula, data_nascimento):
+        self.nome = nome
+        self.matricula = matricula
+        self.data_nascimento = data_nascimento
 
 class Disciplina:
-    pass
+    codigo = ''
+    nome = ''
+    matricula_professor = ''
+    
+    def __init__(self, codigo, nome, matricula_professor):
+        self.codigo = codigo
+        self.nome = nome
+        self.matricula_professor = matricula_professor
 
 class Nota:
-    pass
+    codigo_disciplina = ''
+    matricula_aluno = ''
+    nota1 = 0.0
+    nota2 = 0.0
+    
+    def __init__(self, codigo, nome, matricula_professor):
+        self.codigo = codigo
+        self.nome = nome
+        self.matricula_professor = matricula_professor
