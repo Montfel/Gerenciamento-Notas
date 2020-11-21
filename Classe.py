@@ -25,9 +25,6 @@ class Professor:
                 data = input('\nInforme a data de nascimento do professor (DD/MM/AAAA): ')
                 assert len(data) == 10
                 self.data_nascimento = date(int(data[6:]), int(data[3:5]), int(data[:2]))
-                print(self.nome)
-                print(self.matricula)
-                print(self.data_nascimento)
 
                 # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
                 # subirDadosParaArquivo('medicos.txt', medicos)
@@ -68,9 +65,6 @@ class Aluno:
                 data = input('\nInforme a data de nascimento do aluno (DD/MM/AAAA): ')
                 assert len(data) == 10
                 self.data_nascimento = date(int(data[6:]), int(data[3:5]), int(data[:2]))
-                print(self.nome)
-                print(self.matricula)
-                print(self.data_nascimento)
 
                 # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
                 # subirDadosParaArquivo('medicos.txt', medicos)
@@ -81,6 +75,11 @@ class Aluno:
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
                     return None
+
+    def impressao(self):
+        print(f'Nome: {self.nome}'
+              f' - Matricula: {self.matricula}'
+              f' - Data de nascimento: {self.data_nascimento}')
 
 
 class Disciplina:
@@ -106,10 +105,6 @@ class Disciplina:
                 self.matricula_professor = input('\nInforme a matrícula do professor: ')
                 assert self.matricula_professor.isnumeric()
 
-                print(self.codigo)
-                print(self.nome)
-                print(self.matricula_professor)
-
                 # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
                 # subirDadosParaArquivo('medicos.txt', medicos)
                 print('\nDisciplina cadastrada.')
@@ -119,6 +114,11 @@ class Disciplina:
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
                     return None
+    
+    def impressao(self):
+        print(f'Codigo: {self.codigo}'
+              f' - Nome: {self.nome}'
+              f' - Matrícula do professor: {self.matricula_professor}')
 
 
 class Nota:
@@ -143,16 +143,11 @@ class Nota:
                 assert self.matricula_aluno.isnumeric()
 
                 self.nota1 = float(input('\nInforme a primeira nota: '))  # .strip().capitalize()
-                # assert len(self.nota1) >= 1
+                assert self.nota1 >= 0 and self.nota1 <= 10
 
                 self.nota2 = float(input('\nInforme a segunda nota: '))  # .strip().capitalize()
-                # assert len(self.nota2) >= 1
-
-                print(self.codigo_disciplina)
-                print(self.matricula_aluno)
-                print(self.nota1)
-                print(self.nota2)
-
+                assert self.nota2 >= 0 and self.nota2 <= 10
+                
                 # medicos.append([self.crm, self.nome, self.cpf, self.sexo, self.status])
                 # subirDadosParaArquivo('medicos.txt', medicos)
                 print('\nNotas cadastradas.')
@@ -162,4 +157,9 @@ class Nota:
                 voltar = voltarMenu()
                 if voltar.casefold() == 's':
                     return None
-
+    
+    def impressao(self):
+        print(f'Codigo da disciplina: {self.codigo_disciplina}'
+              f' - Matrícula do aluno: {self.matricula_aluno}'
+              f' - Nota 1: {self.nota1}'
+              f' - Nota 2: {self.nota2}')

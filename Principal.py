@@ -22,13 +22,14 @@ while True:
     
     elif escolha == '1':
         professor = Professor()
+        Professor.impressao(professor)
         listaProf.append(professor)
 
     elif escolha == '2':
         aluno = Aluno()
     
     elif escolha == '3':
-        displina = Disciplina()
+        disciplina = Disciplina()
     
     elif escolha == '4':
         nota = Nota()
