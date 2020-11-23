@@ -1,8 +1,6 @@
 import pandas as pd
 from Classe import Professor, Aluno, Disciplina, Nota
-from Funcao import buscarDisciplina, buscarProfessor, voltarMenu
-
-Notas = open('Notas.xlsx', 'w')
+from Funcao import buscarDisciplina, buscarProfessor, voltarMenu, addColunaDataFrame, adicionarDataFrame
 
 listaProf = []
 listaAluno = []
@@ -28,6 +26,11 @@ while True:
 
     elif escolha == '1':
         professor = Professor()
+        addColunaDataFrame()
+        adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento)
+        # print(professor.nome)
+        # print(professor.matricula)
+        # print(professor.data_nascimento)
         listaProf.append(professor)
 
     elif escolha == '2':

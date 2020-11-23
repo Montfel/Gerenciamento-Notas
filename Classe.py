@@ -1,3 +1,4 @@
+import pandas as pd
 from datetime import date
 from Funcao import voltarMenu
 
@@ -63,6 +64,7 @@ class Aluno:
 
     def getNome(self):
         return self.nome
+
 
 
 class Disciplina:
