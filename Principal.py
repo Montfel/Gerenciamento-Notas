@@ -1,5 +1,8 @@
+import pandas as pd
 from Classe import Professor, Aluno, Disciplina, Nota
 from Funcao import buscarDisciplina, buscarProfessor, voltarMenu
+
+Notas = open('Notas.xlsx', 'w')
 
 listaProf = []
 listaAluno = []
