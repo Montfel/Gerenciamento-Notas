@@ -1,6 +1,14 @@
 import pandas as pd
 from Classe import Professor, Aluno, Disciplina, Nota
-from Funcao import buscarDisciplina, buscarProfessor, voltarMenu, addColunaDataFrame, adicionarDataFrame
+from Funcao import buscarDisciplina, buscarProfessor, voltarMenu, criarDataFrame, adicionarDataFrame
+
+try:
+    open('N1.xlsx', 'r')
+    File = True
+except IOError:
+    File = False
+    print('Criacao novo arquivo...')
+    criarDataFrame()
 
 listaProf = []
 listaAluno = []
@@ -26,11 +34,15 @@ while True:
 
     elif escolha == '1':
         professor = Professor()
-        addColunaDataFrame()
-        adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento)
-        # print(professor.nome)
-        # print(professor.matricula)
-        # print(professor.data_nascimento)
+        # Teste
+        if not File:
+            print('1 →')
+            # criarDataFrame(professor.nome, professor.matricula, professor.data_nascimento)
+            adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento)
+        elif File:
+            print('2 ←')
+            adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento)
+
         listaProf.append(professor)
 
     elif escolha == '2':
