@@ -4,9 +4,7 @@ from Funcao import buscarDisciplina, buscarProfessor, voltarMenu, criarDataFrame
 
 try:
     open('N1.xlsx', 'r')
-    File = True
 except IOError:
-    File = False
     print('Criando novo arquivo...')
     criarDataFrame()
 
@@ -34,15 +32,7 @@ while True:
 
     elif escolha == '1':
         professor = Professor()
-        # Teste
-        if not File:
-            print('1 →')
-            # criarDataFrame(professor.nome, professor.matricula, professor.data_nascimento)
-            adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento)
-        elif File:
-            print('2 ←')
-            adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento)
-
+        adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento)
         listaProf.append(professor)
 
     elif escolha == '2':
