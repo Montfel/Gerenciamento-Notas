@@ -7,7 +7,7 @@ try:
     File = True
 except IOError:
     File = False
-    print('Criacao novo arquivo...')
+    print('Criando novo arquivo...')
     criarDataFrame()
 
 listaProf = []
