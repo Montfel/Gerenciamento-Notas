@@ -91,4 +91,22 @@ def salvarDataframe(df,df2,df3,df4,lista_de_professores,lista_de_alunos,lista_de
     dados.to_excel(excel_writer,'Plan1',index=False)
     excel_writer.save()
 
+
+def adicionarDataFrame(parametro1, parametro2, parametro3, parametro4):
+    df = pd.read_excel(f'N{parametro4}.xlsx')
+    df.drop(columns=["Unnamed: 0"], inplace=True)
+    # print(df)
+
+    linha = [parametro1, parametro2, parametro3]
+    df.loc[len(df)] = linha
+
+    df.to_excel(f'N{parametro4}.xlsx', f'Plan{parametro4}')
+
+    print(df)
+
+
+def adicionarDataFrameNotas(parametro1, parametro2, parametro3, parametro4):
+    df = pd.read_excel(f'N4.xlsx')
+    df.drop(columns=["Unnamed: 0"], inplace=True)
+
     

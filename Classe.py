@@ -9,6 +9,7 @@ class Professor:
     data_nascimento = date
 
     def __init__(self, nome=nome, matricula=matricula, data_nascimento=data_nascimento):
+        
         if nome == '' and matricula == '':
 
             while True:
