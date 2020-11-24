@@ -8,7 +8,7 @@ class Professor:
     data_nascimento = date
 
     def __init__(self, nome=nome, matricula=matricula, data_nascimento=data_nascimento):
-        
+
         if nome == '' and matricula == '':
             while True:
                 try:
@@ -77,7 +77,7 @@ class Disciplina:
     codigo = ''
     nome = ''
     matricula_professor = ''
-    
+
     def __init__(self, codigo=codigo, nome=nome, matricula_professor=matricula_professor):
         if codigo == '' and nome == '' and matricula_professor == '':
             while True:
@@ -150,8 +150,7 @@ class Nota:
             self.nota2 = nota2
 
     def calcularMedia(self):
-        media = round(((self.nota1 + self.nota2) / 2), 2)
-        return media
+        return round(((self.nota1 + self.nota2) / 2), 2)
 
     def getMatriculaAluno(self):
         return self.matricula_aluno
