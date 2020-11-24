@@ -126,3 +126,22 @@ def getDataFramefromExcel(df,df1,df2,df4,lista_de_professores,lista_de_alunos,li
         nota2 = dados.loc[i][3]
         notas = Classe.Disciplina(codigo_do_aluno,matricula_aluno,nota1,nota2)
         lista_de_notas.append(notas)
+
+def adicionarDataFrame(parametro1, parametro2, parametro3, parametro4):
+    df = pd.read_excel(f'N{parametro4}.xlsx')
+    df.drop(columns=["Unnamed: 0"], inplace=True)
+    # print(df)
+
+    linha = [parametro1, parametro2, parametro3]
+    df.loc[len(df)] = linha
+
+    df.to_excel(f'N{parametro4}.xlsx', f'Plan{parametro4}')
+
+    print(df)
+
+
+def adicionarDataFrameNotas(parametro1, parametro2, parametro3, parametro4):
+    df = pd.read_excel(f'N4.xlsx')
+    df.drop(columns=["Unnamed: 0"], inplace=True)
+
+    
