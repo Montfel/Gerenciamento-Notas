@@ -1,5 +1,4 @@
 import pandas as pd
-from datetime import date
 import Classe
 
 
@@ -17,7 +16,6 @@ def buscarProfessor(disciplina, listaProf):
             return listaProf[i]
 
 
-#
 # for i in range(len(listaNota)):
 #     if listaNota[i].codigo_disciplina == disciplina.codigo:
 #         notas.append(listaNota[i])
@@ -124,28 +122,3 @@ def getDataFramefromExcel(lista_de_professores, lista_de_alunos, lista_de_discip
         nota2 = dados.loc[i][3]
         notas = Classe.Nota(codigo_do_aluno, matricula_aluno, nota1, nota2)
         lista_de_notas.append(notas)
-
-
-# def adicionarDataFrame(parametro1, parametro2, parametro3, parametro4):
-#     df = pd.read_excel(f'N{parametro4}.xlsx')
-#     # df.drop(columns=["Unnamed: 0"], inplace=True)
-#     # print(df)
-#
-#     linha = [parametro1, parametro2, parametro3]
-#     df.loc[len(df)] = linha
-#
-#     df.to_excel(f'N{parametro4}.xlsx', f'Plan{parametro4}')
-#
-#     print(df)
-#
-#
-# def adicionarDataFrameNotas(parametro1, parametro2, parametro3, parametro4):
-#     df = pd.read_excel('N4.xlsx')
-#     # df.drop(columns=["Unnamed: 0"], inplace=True)
-#
-#     linha = [parametro1, parametro2, parametro3, parametro4]
-#     df.loc[len(df)] = linha
-#
-#     df.to_excel('N4.xlsx', 'Plan4')
-#
-#     print(df)
