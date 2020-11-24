@@ -39,25 +39,57 @@ def voltarMenu():
 
 
 def criarDataFrame():
-    df = pd.DataFrame(columns=['Nome', 'Matricula', 'Data de Nascimento'])
-    df2 = pd.DataFrame(columns=['Nome', 'Matricula', 'Data de Nascimento'])
-    df3 = pd.DataFrame(columns=['Codigo', 'Nome', 'Matricula do professor'])
-    df4 = pd.DataFrame(columns=['Codigo da Disciplina', 'Matrícula do aluno', 'Nota 1', 'Nota 2'])
-    df.to_excel('N1.xlsx', 'Plan1')
-    df2.to_excel('N2.xlsx', 'Plan2')
-    df3.to_excel('N3.xlsx', 'Plan3')
-    df4.to_excel('N4.xlsx', 'Plan4')
-    # print(df.head())
+    df = pd.DataFrame(columns=['Nome', 'Matricula', 'Data de Nascimento']) #Dataframe Professor
+    df2 = pd.DataFrame(columns=['Nome', 'Matricula', 'Data de Nascimento'])#Dataframe Aluno
+    df3 = pd.DataFrame(columns=['Codigo', 'Nome', 'Matricula do professor'])#Dataframe Disciplinas
+    df4 = pd.DataFrame(columns=['Codigo da Disciplina', 'Matrícula do aluno', 'Nota 1', 'Nota 2'])#Dataframe Notas
+    df.to_excel('N1.xlsx', 'Plan1',index=False)
+    df2.to_excel('N2.xlsx', 'Plan1',index=False)
+    df3.to_excel('N3.xlsx', 'Plan1',index=False)
+    df4.to_excel('N4.xlsx', 'Plan1',index=False)
 
 
-def adicionarDataFrame(parametro1, parametro2, parametro3, parametro4):
-    df = pd.read_excel(f'N{parametro4}.xlsx')
-    df.drop(columns=["Unnamed: 0"], inplace=True)
-    # print(df)
 
-    linha = [parametro1, parametro2, parametro3]
-    df.loc[len(df)] = linha
+def salvarDataframe(df,df2,df3,df4,lista_de_professores,lista_de_alunos,lista_de_disciplinas,lista_de_notas):
+    
+    i = 0
+    dados = pd.read_excel('N1.xlsx')
+    for professor in lista_de_professores:
+        linha = [professor.nome,professor.matricula,professor.data_nascimento]
+        dados.loc[i] = linha
+        i += 1
+    excel_writer = pd.ExcelWriter('N1.xlsx')
+    dados.to_excel(excel_writer,'Plan1',index=False)
+    excel_writer.save()
 
-    df.to_excel(f'N{parametro4}.xlsx', f'Plan{parametro4}')
+    i = 0
+    dados = pd.read_excel('N2.xlsx')
+    for aluno in lista_de_alunos:
+        linha = [aluno.nome,aluno.matricula,aluno.data_nascimento]
+        dados.loc[i] = linha
+        i += 1
+    excel_writer = pd.ExcelWriter('N2.xlsx')
+    dados.to_excel(excel_writer,'Plan1',index=False)
+    excel_writer.save()
 
-    print(df)
+    i = 0
+    dados = pd.read_excel('N3.xlsx')
+    for disciplina in lista_de_disciplinas:
+        linha = [disciplina.codigo,aluno.nome,aluno.matricula_professor]
+        dados.loc[i] = linha
+        i += 1
+    excel_writer = pd.ExcelWriter('N3.xlsx')
+    dados.to_excel(excel_writer,'Plan1',index=False)
+    excel_writer.save()
+
+    i = 0
+    dados = pd.read_excel('N4.xlsx')
+    for nota in lista_de_notas:
+        linha = [nota.codigo_disciplina,nota.matricula_aluno,nota.nota1,nota.nota2]
+        dados.loc[i] = linha
+        i += 1
+    excel_writer = pd.ExcelWriter('N4.xlsx')
+    dados.to_excel(excel_writer,'Plan1',index=False)
+    excel_writer.save()
+
+    
