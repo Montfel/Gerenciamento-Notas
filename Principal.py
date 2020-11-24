@@ -32,15 +32,17 @@ while True:
 
     elif escolha == '1':
         professor = Professor()
-        adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento)
+        adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento, 1)
         listaProf.append(professor)
 
     elif escolha == '2':
         aluno = Aluno()
+        adicionarDataFrame(aluno.nome, aluno.matricula, aluno.data_nascimento, 2)
         listaAluno.append(aluno)
 
     elif escolha == '3':
         disciplina = Disciplina()
+        adicionarDataFrame(disciplina.codigo, disciplina.nome, disciplina.matricula_professor, 3)
         listaDisc.append(disciplina)
 
     elif escolha == '4':

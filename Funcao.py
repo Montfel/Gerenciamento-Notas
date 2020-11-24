@@ -1,5 +1,6 @@
 import pandas as pd
 from datetime import date
+from openpyxl import Workbook
 
 
 def buscarDisciplina(busca, listaDisc):
@@ -39,18 +40,24 @@ def voltarMenu():
 
 def criarDataFrame():
     df = pd.DataFrame(columns=['Nome', 'Matricula', 'Data de Nascimento'])
-    df.to_excel('N1.xlsx')
+    df2 = pd.DataFrame(columns=['Nome', 'Matricula', 'Data de Nascimento'])
+    df3 = pd.DataFrame(columns=['Codigo', 'Nome', 'Matricula do professor'])
+    df4 = pd.DataFrame(columns=['Codigo da Disciplina', 'Matrícula do aluno', 'Nota 1', 'Nota 2'])
+    df.to_excel('N1.xlsx', 'Plan1')
+    df2.to_excel('N2.xlsx', 'Plan2')
+    df3.to_excel('N3.xlsx', 'Plan3')
+    df4.to_excel('N4.xlsx', 'Plan4')
     # print(df.head())
 
 
-def adicionarDataFrame(nome, matricula, data):
-    df = pd.read_excel('N1.xlsx')
+def adicionarDataFrame(parametro1, parametro2, parametro3, parametro4):
+    df = pd.read_excel(f'N{parametro4}.xlsx')
     df.drop(columns=["Unnamed: 0"], inplace=True)
     # print(df)
 
-    linha = [nome, matricula, data]
+    linha = [parametro1, parametro2, parametro3]
     df.loc[len(df)] = linha
 
-    df.to_excel('N1.xlsx')
+    df.to_excel(f'N{parametro4}.xlsx', f'Plan{parametro4}')
 
     print(df)

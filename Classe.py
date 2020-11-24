@@ -66,7 +66,6 @@ class Aluno:
         return self.nome
 
 
-
 class Disciplina:
     codigo = ''
     nome = ''
