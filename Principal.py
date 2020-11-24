@@ -6,7 +6,7 @@ try:
     open('N1.xlsx', 'r')
 
 except IOError:
-    print('Criando novo arquivo...')
+    print('Criando novos arquivos...')
     criarDataFrame()
 
 listaProf = []
