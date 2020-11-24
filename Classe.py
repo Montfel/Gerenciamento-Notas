@@ -150,7 +150,8 @@ class Nota:
             self.nota2 = nota2
 
     def calcularMedia(self):
-        return (self.nota1 + self.nota2) / 2
-    
+        media = round(((self.nota1 + self.nota2) / 2), 2)
+        return media
+
     def getMatriculaAluno(self):
         return self.matricula_aluno
