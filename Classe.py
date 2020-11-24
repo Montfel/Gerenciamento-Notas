@@ -8,25 +8,32 @@ class Professor:
     matricula = ''
     data_nascimento = date
 
-    def __init__(self):
-        while True:
-            try:
-                self.matricula = input('\nInforme a matrícula do professor: ')
-                assert self.matricula.isnumeric()
+    def __init__(self, nome=nome, matricula=matricula, data_nascimento=data_nascimento):
+        if nome == '' and matricula == '':
 
-                self.nome = input('\nInforme o nome do professor: ').strip().capitalize()
-                assert len(self.nome) >= 1
+            while True:
+                try:
+                    self.matricula = input('\nInforme a matrícula do professor: ')
+                    assert self.matricula.isnumeric()
 
-                data = input('\nInforme a data de nascimento do professor (DD/MM/AAAA): ')
-                self.data_nascimento = date(int(data[6:]), int(data[3:5]), int(data[:2]))
+                    self.nome = input('\nInforme o nome do professor: ').strip().capitalize()
+                    assert len(self.nome) >= 1
 
-                print('\nProfessor cadastrado.')
-                break
+                    data = input('\nInforme a data de nascimento do professor (DD/MM/AAAA): ')
+                    self.data_nascimento = date(int(data[6:]), int(data[3:5]), int(data[:2]))
 
-            except (AssertionError, ValueError):
-                voltar = voltarMenu()
-                if voltar.casefold() == 's':
+                    print('\nProfessor cadastrado.')
                     break
+
+                except (AssertionError, ValueError):
+                    voltar = voltarMenu()
+                    if voltar.casefold() == 's':
+                        break
+
+        else:
+            self.nome = nome
+            self.matricula = matricula
+            self.data_nascimento = data_nascimento
 
     def impressao(self):
         print(f'Nome: {self.nome}'
@@ -106,7 +113,7 @@ class Nota:
     matricula_aluno = ''
     nota1 = 0.0
     nota2 = 0.0
-    
+
     def __init__(self):
         while True:
             try:

@@ -1,9 +1,10 @@
 import pandas as pd
 from Classe import Professor, Aluno, Disciplina, Nota
-from Funcao import buscarDisciplina, buscarProfessor, voltarMenu, criarDataFrame, adicionarDataFrame
+from Funcao import buscarDisciplina, buscarProfessor, voltarMenu, criarDataFrame, adicionarDataFrame, adicionarDataFrameNotas
 
 try:
     open('N1.xlsx', 'r')
+
 except IOError:
     print('Criando novo arquivo...')
     criarDataFrame()
@@ -14,6 +15,9 @@ listaDisc = []
 listaNota = []
 notas = []
 alunos = []
+
+professor = Professor('zzzz', '0101', '2000-02-02')
+print(Professor.getNome(professor))
 
 while True:
     print('\nMenu da Escola\n\n'
@@ -47,6 +51,7 @@ while True:
 
     elif escolha == '4':
         nota = Nota()
+        adicionarDataFrameNotas(nota.codigo_disciplina, nota.matricula_aluno, nota.nota1, nota.nota2)
         listaNota.append(nota)
 
     elif escolha == '5':

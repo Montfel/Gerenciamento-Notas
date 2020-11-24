@@ -1,6 +1,5 @@
 import pandas as pd
 from datetime import date
-from openpyxl import Workbook
 
 
 def buscarDisciplina(busca, listaDisc):
@@ -59,5 +58,17 @@ def adicionarDataFrame(parametro1, parametro2, parametro3, parametro4):
     df.loc[len(df)] = linha
 
     df.to_excel(f'N{parametro4}.xlsx', f'Plan{parametro4}')
+
+    print(df)
+
+
+def adicionarDataFrameNotas(parametro1, parametro2, parametro3, parametro4):
+    df = pd.read_excel(f'N4.xlsx')
+    df.drop(columns=["Unnamed: 0"], inplace=True)
+
+    linha = [parametro1, parametro2, parametro3, parametro4]
+    df.loc[len(df)] = linha
+
+    df.to_excel(f'N4.xlsx', f'Plan4')
 
     print(df)
