@@ -1,4 +1,3 @@
-import pandas as pd
 from datetime import date
 from Funcao import voltarMenu
 
@@ -139,7 +138,7 @@ class Nota:
                     print('\nNotas cadastradas.')
                     break
 
-                except AssertionError:
+                except (AssertionError, ValueError):
                     voltar = voltarMenu()
                     if voltar.casefold() == 's':
                         break
@@ -151,7 +150,8 @@ class Nota:
             self.nota2 = nota2
 
     def calcularMedia(self):
-        return (self.nota1 + self.nota2) / 2
-    
+        media = round(((self.nota1 + self.nota2) / 2), 2)
+        return media
+
     def getMatriculaAluno(self):
         return self.matricula_aluno
