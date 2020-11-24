@@ -16,8 +16,6 @@ def buscarProfessor(disciplina, listaProf):
         if listaProf[i].matricula == disciplina.matricula_professor:
             return listaProf[i]
 
-    return False
-
 
 #
 # for i in range(len(listaNota)):

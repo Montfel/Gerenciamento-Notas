@@ -18,10 +18,6 @@ notas = []
 alunos = []
 
 
-professor = Professor('zzzz', '0101', '2000-02-02')
-
-print(Professor.getNome(professor))
-
 getDataFramefromExcel(listaProf, listaAluno, listaDisc, listaNota)
 
 while True:
