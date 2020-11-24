@@ -15,7 +15,7 @@ listaNota = []
 notas = []
 alunos = []
 
-Funcao.criarDataFrame()
+
 while True:
     print('\nMenu da Escola\n\n'
           '1 - Cadastro de Professores\n'
