@@ -86,8 +86,8 @@ class Disciplina:
                     self.codigo = input('\nInforme o código da disciplina: ')
                     assert self.codigo.isnumeric()
 
-                    self.nomed = input('\nInforme o nome da disciplina: ').strip().capitalize()
-                    assert len(self.nomed) >= 1
+                    self.nome = input('\nInforme o nome da disciplina: ').strip().capitalize()
+                    assert len(self.nome) >= 1
 
                     self.matricula_professor = input('\nInforme a matrícula do professor: ')
                     assert self.matricula_professor.isnumeric()
