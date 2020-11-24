@@ -17,7 +17,6 @@ listaNota = []
 notas = []
 alunos = []
 
-
 getDataFramefromExcel(listaProf, listaAluno, listaDisc, listaNota)
 
 while True:
