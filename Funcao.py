@@ -71,7 +71,7 @@ def salvarDataframe(lista_de_professores, lista_de_alunos, lista_de_disciplinas,
     i = 0
     dados = pd.read_excel('N3.xlsx')
     for disciplina in lista_de_disciplinas:
-        linha = [disciplina.codigo, aluno.nome, aluno.matricula_professor]
+        linha = [disciplina.codigo, disciplina.nome, disciplina.matricula_professor]
         dados.loc[i] = linha
         i += 1
     excel_writer = pd.ExcelWriter('N3.xlsx')
