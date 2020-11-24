@@ -33,13 +33,9 @@ class Professor:
 
         else:
             self.nome = nome
+            print('KKKKKKKKKKK')
             self.matricula = matricula
             self.data_nascimento = data_nascimento
-
-    def impressao(self):
-        print(f'Nome: {self.nome}'
-              f' - Matricula: {self.matricula}'
-              f' - Data de nascimento: {self.data_nascimento}')
 
     def getNome(self):
         return self.nome
