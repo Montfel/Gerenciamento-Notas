@@ -19,7 +19,7 @@ alunos = []
 professor = Professor('zzzz', '0101', '2000-02-02')
 print(Professor.getNome(professor))
 
-Funcao.criarDataFrame()
+criarDataFrame()
 while True:
     print('\nMenu da Escola\n\n'
           '1 - Cadastro de Professores\n'
