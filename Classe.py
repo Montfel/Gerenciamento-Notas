@@ -138,7 +138,7 @@ class Nota:
                     print('\nNotas cadastradas.')
                     break
 
-                except AssertionError:
+                except (AssertionError, ValueError):
                     voltar = voltarMenu()
                     if voltar.casefold() == 's':
                         break
