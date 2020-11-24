@@ -53,7 +53,7 @@ while True:
     elif escolha == '5':
         while True:
             try:
-                buscaDisc = input('\nInforme o código da Disciplina: ')
+                buscaDisc = int(input('\nInforme o código da Disciplina: '))
 
                 disc = buscarDisciplina(buscaDisc, listaDisc)
                 assert disc is not False
