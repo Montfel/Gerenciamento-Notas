@@ -16,9 +16,8 @@ listaNota = []
 notas = []
 alunos = []
 
-
 professor = Professor('zzzz', '0101', '2000-02-02')
-print(Professor.getNome(professor))
+listaProf.append(professor)
 
 criarDataFrame()
 while True:
@@ -38,22 +37,22 @@ while True:
 
     elif escolha == '1':
         professor = Professor()
-        adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento, 1)
+        # adicionarDataFrame(professor.nome, professor.matricula, professor.data_nascimento, 1)
         listaProf.append(professor)
 
     elif escolha == '2':
         aluno = Aluno()
-        adicionarDataFrame(aluno.nome, aluno.matricula, aluno.data_nascimento, 2)
+        # adicionarDataFrame(aluno.nome, aluno.matricula, aluno.data_nascimento, 2)
         listaAluno.append(aluno)
 
     elif escolha == '3':
         disciplina = Disciplina()
-        adicionarDataFrame(disciplina.codigo, disciplina.nome, disciplina.matricula_professor, 3)
+        # adicionarDataFrame(disciplina.codigo, disciplina.nome, disciplina.matricula_professor, 3)
         listaDisc.append(disciplina)
 
     elif escolha == '4':
         nota = Nota()
-        adicionarDataFrameNotas(nota.codigo_disciplina, nota.matricula_aluno, nota.nota1, nota.nota2)
+        # adicionarDataFrameNotas(nota.codigo_disciplina, nota.matricula_aluno, nota.nota1, nota.nota2)
         listaNota.append(nota)
 
     elif escolha == '5':
