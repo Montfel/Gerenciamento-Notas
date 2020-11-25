@@ -65,8 +65,8 @@ while True:
                         notas.append(listaNota[i])
                     # if listaAluno[i].matricula == listaNota[i].matricula_aluno:
                     #     alunos.append(listaAluno[i])
-
                 Disciplina.relatorioNotas(disc, prof, notas)
+                notas = []
                 break
 
             except AssertionError:

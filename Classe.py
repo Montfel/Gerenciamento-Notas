@@ -82,7 +82,7 @@ class Disciplina:
         if codigo == '' and nome == '' and matricula_professor == '':
             while True:
                 try:
-                    self.codigo = input('\nInforme o código da disciplina: ')
+                    self.codigo = str(input('\nInforme o código da disciplina: '))
                     assert self.codigo.isnumeric()
 
                     self.nome = input('\nInforme o nome da disciplina: ').strip().capitalize()
@@ -99,7 +99,7 @@ class Disciplina:
                     if voltar.casefold() == 's':
                         break
         else:
-            self.codigo = codigo
+            self.codigo = str(codigo)
             self.nome = nome
             self.matricula_professor = matricula_professor
 
@@ -123,7 +123,7 @@ class Nota:
         if codigo_disciplina == '' and matricula_aluno == '':
             while True:
                 try:
-                    self.codigo_disciplina = input('\nInforme o código da disciplina: ')
+                    self.codigo_disciplina = str(input('\nInforme o código da disciplina: '))
                     assert self.codigo_disciplina.isnumeric()
 
                     self.matricula_aluno = input('\nInforme a matrícula do aluno: ')
@@ -144,7 +144,7 @@ class Nota:
                         break
 
         else:
-            self.codigo_disciplina = codigo_disciplina
+            self.codigo_disciplina = str(codigo_disciplina)
             self.matricula_aluno = matricula_aluno
             self.nota1 = nota1
             self.nota2 = nota2
