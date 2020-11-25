@@ -116,9 +116,9 @@ def getDataFramefromExcel(lista_de_professores, lista_de_alunos, lista_de_discip
     # Notas
     dados = pd.read_excel('N4.xlsx')
     for i in range(len(dados)):
-        codigo_do_aluno = dados.loc[i][0]
+        codigo_da_disciplina = dados.loc[i][0]
         matricula_aluno = dados.loc[i][1]
         nota1 = dados.loc[i][2]
         nota2 = dados.loc[i][3]
-        notas = Classe.Nota(codigo_do_aluno, matricula_aluno, nota1, nota2)
+        notas = Classe.Nota(str(codigo_da_disciplina), matricula_aluno, nota1, nota2)
         lista_de_notas.append(notas)

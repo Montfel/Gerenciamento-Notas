@@ -108,7 +108,7 @@ class Disciplina:
               f'\nMatrícula do professor: {self.matricula_professor}'
               f'\nNome do Professor: {Professor.getNome(professor)}')
         for i in range(len(notas)):
-            print(f'\nMatrícula do aluno: {Nota.getMatriculaAluno(notas[i])} '
+            print(f'\nMatrícula do aluno: {Nota.getMatriculaAluno(notas[i])}'
                   # f'- Nome do aluno: {Aluno.getNome(alunos[i])} '
                   f'- Nota final: {Nota.calcularMedia(notas[i])}')
 
