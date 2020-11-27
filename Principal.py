@@ -1,9 +1,9 @@
 from Classe import Professor, Aluno, Disciplina, Nota
 from Funcao import buscarDisciplina, buscarProfessor, voltarMenu, criarDataFrame, \
-    salvarDataframe, getDataFramefromExcel, validar_professor
+    salvarDataframe, getDataFramefromExcel, validar_professor, validar_aluno, validar_disciplina, validar_nota
 
 try:
-    open('N1.xlsx', 'r')
+    open('Dados.xlsx', 'r')
 
 except IOError:
     print('Criando novos arquivos...')
@@ -38,16 +38,13 @@ while True:
         validar_professor(listaProf)
 
     elif escolha == '2':
-        aluno = Aluno()
-        listaAluno.append(aluno)
+        validar_aluno(listaAluno)
 
     elif escolha == '3':
-        disciplina = Disciplina()
-        listaDisc.append(disciplina)
+        validar_disciplina(listaDisc)
 
     elif escolha == '4':
-        nota = Nota()
-        listaNota.append(nota)
+        validar_nota(listaNota)
 
     elif escolha == '5':
         while True:
@@ -56,14 +53,11 @@ while True:
 
                 disc = buscarDisciplina(buscaDisc, listaDisc)
                 assert disc is not False
-
                 prof = buscarProfessor(disc, listaProf)
-
+                print(listaNota[0].codigo_disciplina)
                 for i in range(len(listaNota)):
                     if listaNota[i].codigo_disciplina == disc.codigo:
                         notas.append(listaNota[i])
-                    # if listaAluno[i].matricula == listaNota[i].matricula_aluno:
-                    #     alunos.append(listaAluno[i])
                 Disciplina.relatorioNotas(disc, prof, notas)
                 notas = []
                 break
