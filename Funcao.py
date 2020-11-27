@@ -1,4 +1,5 @@
 import pandas as pd
+from datetime import date
 import Classe
 
 
@@ -95,7 +96,7 @@ def getDataFramefromExcel(lista_de_professores, lista_de_alunos, lista_de_discip
         nome = dados.loc[i][0]
         matricula = dados.loc[i][1]
         data_nascimento = dados.loc[i][2]
-        professor = Classe.Professor(nome, matricula, data_nascimento)
+        professor = Classe.Professor(nome, str(matricula), data_nascimento)
         lista_de_professores.append(professor)
     # Aluno
     dados = pd.read_excel('N2.xlsx')
@@ -122,3 +123,28 @@ def getDataFramefromExcel(lista_de_professores, lista_de_alunos, lista_de_discip
         nota2 = dados.loc[i][3]
         notas = Classe.Nota(str(codigo_da_disciplina), matricula_aluno, nota1, nota2)
         lista_de_notas.append(notas)
+
+def validar_professor(lista_professores):
+    while True:
+                try:
+                    matricula = input('\nInforme a matrícula do professor: ')
+                    assert matricula.isnumeric()
+                    for i in range(len(lista_professores)):
+                        if matricula == lista_professores[i].matricula:
+                            print("Já existe um professor cadastrado com essa matricula!")
+                            break
+                        else:
+                            nome = input('\nInforme o nome do professor: ').strip().capitalize()
+                            assert len(nome) >= 1
+                            data = input('\nInforme a data de nascimento do professor (DD/MM/AAAA): ')
+                            data_nascimento = date(int(data[6:]), int(data[3:5]), int(data[:2]))
+                            professor = Classe.Professor(nome,matricula,data_nascimento)
+                            lista_professores.append(professor)
+                            print("Professor cadastrado com sucesso")
+                            break 
+                    break
+                except (AssertionError, ValueError):
+                    voltar = voltarMenu()
+                    if voltar.casefold() == 's':
+                        break
+                        

@@ -1,6 +1,6 @@
 from Classe import Professor, Aluno, Disciplina, Nota
 from Funcao import buscarDisciplina, buscarProfessor, voltarMenu, criarDataFrame, \
-    salvarDataframe, getDataFramefromExcel
+    salvarDataframe, getDataFramefromExcel, validar_professor
 
 try:
     open('N1.xlsx', 'r')
@@ -35,8 +35,7 @@ while True:
         break
 
     elif escolha == '1':
-        professor = Professor()
-        listaProf.append(professor)
+        validar_professor(listaProf)
 
     elif escolha == '2':
         aluno = Aluno()

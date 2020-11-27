@@ -90,7 +90,7 @@ class Disciplina:
 
                     self.matricula_professor = input('\nInforme a matrícula do professor: ')
                     assert self.matricula_professor.isnumeric()
-
+                
                     print('\nDisciplina cadastrada.')
                     break
 
